@@ -1,0 +1,21 @@
+{% extends "base.html "%}
+
+{% block title %}Tasks{% endblock %}
+{% block content %}
+<form method="POST" action="" class="task-form">
+
+    <input type="hidden" name="todo_list_id" value="{{ list_id }}">
+    <input type="text" name="name">
+    <input type="text" name="description">
+
+
+    <input type="submit" value="Add">
+
+</form>
+<div class="task-links">
+    {% for task in tasks %}
+    <a href="">{{ task.name }}</a><br>
+    {% endfor %}
+
+</div>
+{% endblock %}

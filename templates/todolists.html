@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title%}Todo lists{% endblock %}
+
+{% block content%}
+<div class="task-links">
+    {% for todolist in todolists %}
+        <a href="{{ url_for('tasks', list_id=todolist.id)}}">{{ todolist.name }}</a><br>
+    {% endfor %}
+</div>
+<form method="POST">
+    <input type="text" name="name">
+    <input type="submit">
+
+</form>
+
+{% endblock %}
